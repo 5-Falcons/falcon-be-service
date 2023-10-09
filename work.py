@@ -30,7 +30,7 @@ letterpred = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', '
 output_file = open("recognized_sentences.txt", "w")
 
 # Define the frame interval (e.g., every 24 frames for 24fps video)
-frame_interval = 120
+frame_interval = 24
 frame_count = 0
 
 recognized_words = []
@@ -127,7 +127,7 @@ while True:
 
                 for key, value in letter_prediction_dict.items():
                     if value == high1:
-                        print(value)
+                        # print(value)
                         recognized_characters.append(key)
 
                 # Combine recognized characters into words or sentences
@@ -167,6 +167,7 @@ if current_word:
 
 # Write recognized words or sentences to the output file
 output_file.write(" ".join(recognized_words))
+print(" ".join('A B C F F'))
 
 cap.release()
 output_file.close()
